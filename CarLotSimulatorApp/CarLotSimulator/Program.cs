@@ -14,7 +14,10 @@ namespace CarLotSimulator
             //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
             //The methods should take one string parameter: the respective noise property
             
+            
+            var carLot = new CarLot();
             var carOne = new Car();
+            
             carOne.Make = "Chrysler";
             carOne.Model = "Pacifica";
             carOne.Year = 2022;
@@ -37,11 +40,32 @@ namespace CarLotSimulator
             carTwo.MakeHonkNoise("Beep");
             carLotOne.ParkingLot.Add(carTwo);
             
-            var carThree = new Car("Subaru", "Impreza", 2021, true);
+            var carThree = new Car
+                (    "Subaru", 
+                    "Impreza", 
+                    2021, 
+                    true
+                );
             
             carThree.MakeEngineNoise("duhdhuduh");
             carThree.MakeHonkNoise ("wonk");
             carLotOne.ParkingLot.Add(carThree);
+            
+            var carFour = new Car();
+            carFour.Make = "Toyota";
+            carFour.Model = "unknown";
+            carFour.Year = 1950;
+            carFour.IsDriveable = true;
+            carLotOne.ParkingLot.Add(carFour);
+            
+            var carFive = new Car();
+            carFive.Make = "Chevy";
+            carFive.Model = "impala";
+            carFive.Year = 2007;
+            carFive.IsDriveable = false;
+            carLotOne.ParkingLot.Add(carFive);
+            
+            
 
 
             //Now that the Car class is created we can instanciate 3 new cars
@@ -59,6 +83,8 @@ namespace CarLotSimulator
             //It should have at least one property: a List of cars
             //Instanciate the a Carlot at the beginning of the program and as you create a car add the car to the list.
             //At the end iterate through the list printing each of car's Year, Make, and Model to the console
+            Console.WriteLine($"The number of cars in the parking lot is: {carLotOne.ParkingLot.Count}");
         }
+        
     }
 }

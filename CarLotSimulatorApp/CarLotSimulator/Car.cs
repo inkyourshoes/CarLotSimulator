@@ -12,6 +12,7 @@ public class Car
     public string HonkNoise { get; set; }
     public bool IsDriveable { get; set; }
     
+    
     public void MakeEngineNoise(string engineNoise)
     {
         EngineNoise = engineNoise;
@@ -23,12 +24,12 @@ public class Car
         HonkNoise = honkNoise;
         Console.WriteLine($"{Make} {Model} has a honk noise that sounds like {HonkNoise}");
     }
-
+//default constructor below
     public Car()
     {
-        
+        CarLot.NumberOfCars++;        
     }
-    
+    //paramterized contructor below
     public Car(string make, string model, int year, bool isDriveable)
     {
         Make = make;
